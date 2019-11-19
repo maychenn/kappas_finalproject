@@ -26,10 +26,10 @@ class ViewController: UIViewController, RestaurantDataProtocol {
         // parse through NSArray
         for result in data {
             var json = result as! NSDictionary
-            let name = json.value(forKey: "name") as! NSString
+            let name = json.value(forKey: "name") as? NSString
             let price = json.value(forKey: "price_level") as? NSInteger
-            let location = json.value(forKey: "vicinity") as! NSString
-            let rating = json.value(forKey: "rating") as! NSString
+            let location = json.value(forKey: "vicinity") as? NSString
+            let rating = json.value(forKey: "rating") as? NSString
             var resultData = [name, price, location, rating] as [Any]
             restaurantArray.append(resultData)
         }
