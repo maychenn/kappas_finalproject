@@ -41,9 +41,7 @@
                             <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wO5-HH-5ni"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Where Should I Go Eat?" id="QVg-ru-z8w">
-                        <barButtonItem key="rightBarButtonItem" title="Past Requests" id="vvu-ew-yrw"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Where Should I Go Eat?" id="QVg-ru-z8w"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,6 +214,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Pde-S3-nXb"/>
+        <segue reference="gtV-da-UVT"/>
     </inferredMetricsTieBreakers>
 </document>

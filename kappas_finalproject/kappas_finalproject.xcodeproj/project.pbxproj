@@ -15,7 +15,6 @@
 		56AFB8E0237A00FB00C5BF95 /* kappas_finalproject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 56AFB8DE237A00FB00C5BF95 /* kappas_finalproject.xcdatamodeld */; };
 		56AFB8E2237A00FC00C5BF95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56AFB8E1237A00FC00C5BF95 /* Assets.xcassets */; };
 		56AFB8E5237A00FC00C5BF95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56AFB8E3237A00FC00C5BF95 /* LaunchScreen.storyboard */; };
-		56AFB8ED237A06FD00C5BF95 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AFB8EC237A06FD00C5BF95 /* TableViewController.swift */; };
 		56ED9CDB2383503500A8500F /* RestaurantDataSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56ED9CDA2383503500A8500F /* RestaurantDataSession.swift */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,6 @@
 		56AFB8E1237A00FC00C5BF95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56AFB8E4237A00FC00C5BF95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56AFB8E6237A00FC00C5BF95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		56AFB8EC237A06FD00C5BF95 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		56ED9CDA2383503500A8500F /* RestaurantDataSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDataSession.swift; sourceTree = "<group>"; };
 		AB7C9942FE4E4D278FD18F5C /* Pods-kappas_finalproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kappas_finalproject.release.xcconfig"; path = "Target Support Files/Pods-kappas_finalproject/Pods-kappas_finalproject.release.xcconfig"; sourceTree = "<group>"; };
 		EF13DE66393F0D770D4E719F /* libPods-kappas_finalproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kappas_finalproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,13 +78,12 @@
 				56AFB8D5237A00FB00C5BF95 /* AppDelegate.swift */,
 				56AFB8D7237A00FB00C5BF95 /* SceneDelegate.swift */,
 				56AFB8D9237A00FB00C5BF95 /* ViewController.swift */,
-				56AFB8EC237A06FD00C5BF95 /* TableViewController.swift */,
+				56ED9CDA2383503500A8500F /* RestaurantDataSession.swift */,
 				56AFB8DB237A00FB00C5BF95 /* Main.storyboard */,
 				56AFB8E1237A00FC00C5BF95 /* Assets.xcassets */,
 				56AFB8E3237A00FC00C5BF95 /* LaunchScreen.storyboard */,
 				56AFB8E6237A00FC00C5BF95 /* Info.plist */,
 				56AFB8DE237A00FB00C5BF95 /* kappas_finalproject.xcdatamodeld */,
-				56ED9CDA2383503500A8500F /* RestaurantDataSession.swift */,
 			);
 			path = kappas_finalproject;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 				56AFB8E0237A00FB00C5BF95 /* kappas_finalproject.xcdatamodeld in Sources */,
 				56AFB8DA237A00FB00C5BF95 /* ViewController.swift in Sources */,
 				56AFB8D6237A00FB00C5BF95 /* AppDelegate.swift in Sources */,
-				56AFB8ED237A06FD00C5BF95 /* TableViewController.swift in Sources */,
 				56AFB8D8237A00FB00C5BF95 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
