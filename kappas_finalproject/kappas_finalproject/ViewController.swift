@@ -18,7 +18,7 @@ class ViewController: UIViewController, RestaurantDataProtocol {
         self.dataSession.delegate = self
         self.dataSession.getData()
     }
-    func responseDataHandler(data: NSDictionary) {
+    func responseDataHandler(data: NSArray) {
         
     }
     
@@ -26,7 +26,6 @@ class ViewController: UIViewController, RestaurantDataProtocol {
         
     }
   
-    
 
 }
 
