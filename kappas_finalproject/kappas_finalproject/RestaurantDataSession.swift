@@ -10,7 +10,7 @@ import UIKit
 
 protocol RestaurantDataProtocol
 {
-    func responseDataHandler(data:NSDictionary)
+    func responseDataHandler(data:NSArray)
     func responseError(message:String)
 }
 
@@ -47,7 +47,12 @@ class RestaurantDataSession {
              
             do {
                 var jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
-                print(jsonResult)
+                let jsonResult2 = jsonResult!.value(forKey: "results") as? NSArray
+                self.delegate?.responseDataHandler(data: jsonResult2!)
+                
+                //self.delegate?.responseDataHandler(data: jsonResult2!)
+                //print (jsonResult2)
+                //self.delegate?.responseDataHandler(data: jsonResult2!)
                 /*
                 let jsonResult2 = jsonResult!["data"] as? NSDictionary
                 
