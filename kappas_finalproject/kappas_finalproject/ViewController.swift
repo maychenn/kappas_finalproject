@@ -21,7 +21,7 @@ class ViewController: UIViewController, RestaurantDataProtocol {
         self.dataSession.getData()
     }
     
-    var restaurantArray = [[String]]()
+    var restaurantArray = [[Any]]()
     func responseDataHandler(data: NSArray) {
         // parse through NSArray
         for result in data {
@@ -30,6 +30,8 @@ class ViewController: UIViewController, RestaurantDataProtocol {
             let price = json.value(forKey: "price_level") as? NSInteger
             let location = json.value(forKey: "vicinity") as! NSString
             let rating = json.value(forKey: "rating") as! NSString
+            var resultData = [name, price, location, rating] as [Any]
+            restaurantArray.append(resultData)
         }
     }
    
