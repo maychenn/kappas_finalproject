@@ -8,13 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, RestaurantDataProtocol {
+    
+    var dataSession = RestaurantDataSession()
+         
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+           
+        self.dataSession.delegate = self
+        self.dataSession.getData()
     }
-
+    func responseDataHandler(data: NSDictionary) {
+        
+    }
+    
+    func responseError(message: String) {
+        
+    }
+  
+    
 
 }
 
