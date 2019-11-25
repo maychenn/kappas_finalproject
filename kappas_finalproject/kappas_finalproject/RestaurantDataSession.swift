@@ -25,8 +25,7 @@ class RestaurantDataSession {
     init() {}
     
     func getData(postString:String) {
-        print(postString)
-        //change url string
+
         var urlString = urlPathBase + postString + "&radius=1500&type=restaurant&key=AIzaSyCkdofYOJNxlwT510PckBABUKCKVYbTC98"
         
         let url:NSURL? = NSURL(string: urlString)
@@ -51,7 +50,6 @@ class RestaurantDataSession {
                 var jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 let jsonResult2 = jsonResult!.value(forKey: "results") as? NSArray
                 self.delegate?.responseDataHandler(data: jsonResult2!)
-                print(jsonResult)
                 
             } catch {
                 print("JSON error: \(error.localizedDescription)")
