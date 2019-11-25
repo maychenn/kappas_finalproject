@@ -16,7 +16,7 @@ protocol RestaurantDataProtocol
 
 class RestaurantDataSession {
     private let urlSession = URLSession.shared
-    private let urlPathBase = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=1500&type=restaurant&key=AIzaSyCkdofYOJNxlwT510PckBABUKCKVYbTC98"
+    private let urlPathBase = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location="
     
     private var dataTask:URLSessionDataTask? = nil
     
@@ -24,10 +24,12 @@ class RestaurantDataSession {
     
     init() {}
     
-    func getData() {
+    func getData(postString:String) {
+        print(postString)
         //change url string
+        var urlString = urlPathBase + postString + "&radius=1500&type=restaurant&key=AIzaSyCkdofYOJNxlwT510PckBABUKCKVYbTC98"
         
-        let url:NSURL? = NSURL(string: self.urlPathBase)
+        let url:NSURL? = NSURL(string: urlString)
         
         let task = self.urlSession.dataTask(with: url! as URL) { data, response, error in
             if error != nil || data == nil {
@@ -49,24 +51,8 @@ class RestaurantDataSession {
                 var jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 let jsonResult2 = jsonResult!.value(forKey: "results") as? NSArray
                 self.delegate?.responseDataHandler(data: jsonResult2!)
+                print(jsonResult)
                 
-                //self.delegate?.responseDataHandler(data: jsonResult2!)
-                //print (jsonResult2)
-                //self.delegate?.responseDataHandler(data: jsonResult2!)
-                /*
-                let jsonResult2 = jsonResult!["data"] as? NSDictionary
-                
-                
-                let jsonResult3 = try jsonResult2!["current_condition"] as? NSArray
-                if jsonResult3 != nil {
-                    var json = jsonResult3![0] as? NSDictionary
-                
-                
-                    self.delegate?.responseDataHandler(data: json!)
-                } else {
-                    self.delegate?.responseError(message: "Current conditions not found")
-                }
-                 */
             } catch {
                 print("JSON error: \(error.localizedDescription)")
             }

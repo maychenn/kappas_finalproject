@@ -7,24 +7,37 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, RestaurantDataProtocol {
-    
-    
-    
+class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManagerDelegate {
+     
     var dataSession = RestaurantDataSession()
-         
+    let locationManager = CLLocationManager()
+    var latitude : Double?
+    var longitude : Double?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-           
+        locationManager.requestAlwaysAuthorization()
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+        
         self.dataSession.delegate = self
-        self.dataSession.getData()
     }
 
-    func responseDataHandler(data: NSArray) {
-        
-
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        let locations = "\(locValue.latitude),\(locValue.longitude)"
+        self.dataSession.getData(postString: locations)
+        print(locations)
+    }
     
+
     var restaurantArray = [[Any]]()
     func responseDataHandler(data: NSArray) {
         // parse through NSArray
@@ -37,7 +50,9 @@ class ViewController: UIViewController, RestaurantDataProtocol {
             var resultData = [name, price, location, rating] as [Any]
             restaurantArray.append(resultData)
         }
-    }
+        print(restaurantArray)
+        print("found")
+        
     }
    
     
