@@ -74,19 +74,27 @@
                                     <constraint firstItem="IG6-3T-uSy" firstAttribute="leading" secondItem="mfG-RI-oPn" secondAttribute="leading" id="jXV-jg-h37"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="214" translatesAutoresizingMaskIntoConstraints="NO" id="bfF-g9-kSd">
-                                <rect key="frame" x="20" y="832" width="374" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="168" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-P3-upu">
+                                <rect key="frame" x="20" y="748" width="368" height="100"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-ge-ECu">
-                                        <rect key="frame" x="0.0" y="0.0" width="130" height="30"/>
-                                        <state key="normal" title="Absolutely not."/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-ge-ECu" customClass="BounceButton" customModule="kappas_finalproject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="XPL-Rq-b45"/>
+                                            <constraint firstAttribute="width" constant="100" id="uOH-qq-vmg"/>
+                                        </constraints>
+                                        <state key="normal" title="Absolutely not." image="dislike"/>
                                         <connections>
                                             <action selector="noButton:" destination="if5-5y-zZd" eventType="touchUpInside" id="YOw-2X-9mU"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-nP-fYR">
-                                        <rect key="frame" x="344" y="0.0" width="30" height="30"/>
-                                        <state key="normal" title="Yes!"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqs-nP-fYR" customClass="BounceButton" customModule="kappas_finalproject" customModuleProvider="target">
+                                        <rect key="frame" x="268" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="5Ta-Wv-EiV"/>
+                                            <constraint firstAttribute="height" constant="100" id="Thj-tE-7Xe"/>
+                                        </constraints>
+                                        <state key="normal" title="Yes!" image="like"/>
                                         <connections>
                                             <action selector="yesButton:" destination="if5-5y-zZd" eventType="touchUpInside" id="WkN-vl-c7e"/>
                                             <segue destination="lBC-qm-r92" kind="show" id="ObK-Dn-0u8"/>
@@ -98,9 +106,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mfG-RI-oPn" firstAttribute="centerY" secondItem="U2I-5s-DdE" secondAttribute="centerY" id="1Eh-Z8-ajc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bfF-g9-kSd" secondAttribute="trailing" id="Ph7-eA-rza"/>
-                            <constraint firstItem="bfF-g9-kSd" firstAttribute="leading" secondItem="U2I-5s-DdE" secondAttribute="leadingMargin" id="UA3-lu-KjF"/>
-                            <constraint firstItem="e18-Q6-6ao" firstAttribute="bottom" secondItem="bfF-g9-kSd" secondAttribute="bottom" id="bYx-uD-aux"/>
+                            <constraint firstItem="Iur-P3-upu" firstAttribute="centerX" secondItem="e18-Q6-6ao" secondAttribute="centerX" id="Vlx-Kc-1f0"/>
+                            <constraint firstItem="Iur-P3-upu" firstAttribute="top" secondItem="e18-Q6-6ao" secondAttribute="top" constant="660" id="fkl-aX-v0Z"/>
                             <constraint firstItem="mfG-RI-oPn" firstAttribute="centerX" secondItem="e18-Q6-6ao" secondAttribute="centerX" id="o7H-RM-viM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e18-Q6-6ao"/>
@@ -113,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OHH-cV-XfL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2380" y="409"/>
+            <point key="canvasLocation" x="2379.7101449275365" y="408.48214285714283"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="RJD-HK-QBP">
@@ -235,6 +242,10 @@
             <point key="canvasLocation" x="1040.5797101449275" y="807.58928571428567"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dislike" width="128" height="128"/>
+        <image name="like" width="128" height="128"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="gtV-da-UVT"/>
     </inferredMetricsTieBreakers>

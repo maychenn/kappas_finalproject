@@ -33,7 +33,6 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
         
         self.dataSession.delegate = self
     }
-
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (!isLocationUpdated) {
             isLocationUpdated = true
@@ -49,12 +48,13 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
 
     @IBAction func noButton(_ sender: UIButton) {
         self.generateRestaurant(restaurantArray: restaurantArray)
+       
     }
     
     @IBAction func yesButton(_ sender: UIButton) {
         counter = true
-    }
     
+    }
     
     func generateRestaurant(restaurantArray:[[String]]) {
         if self.counter == false {
