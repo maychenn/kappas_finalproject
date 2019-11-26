@@ -26,6 +26,9 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     var address:String = ""
     var liked:Bool = false
     
+    var mapLatitude:Double?
+    var mapLongitude:Double?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -47,6 +50,8 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             isLocationUpdated = true
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         let locations = "\(locValue.latitude),\(locValue.longitude)"
+            self.latitude = locValue.latitude
+            self.longitude = locValue.longitude
             
         // sends coordinates to dataSession
         self.dataSession.getData(postString: locations)
@@ -63,7 +68,25 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     @IBAction func yesButton(_ sender: UIButton) {
         liked = true
         
-    }
+        }
+    
+    func getCoordinates(address:String) {
+        let geoCoder = CLGeocoder()
+        geoCoder.geocodeAddressString(address) { (placemarks, error) in
+            guard
+                let placemark = placemarks?.first,
+                let CLLatitude = placemark.location?.coordinate.latitude,
+                let CLLongitude = placemark.location?.coordinate.longitude
+                else {
+                    // handle no location found
+                    return
+                       }
+            self.mapLatitude = CLLatitude
+            self.mapLongitude = CLLongitude
+           
+        }}
+    
+    
     // gets the random restaurant data from dataSession
     func generateRestaurant(restaurantArray:[[String]]) {
         
@@ -88,8 +111,11 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             self.restaurantNameLabel.text = name
             self.addressLabel.text = address
             
+            // gets coordinates in case this is the selected restaurant
+            getCoordinates(address: address)
         }
     }
+        
     func responseDataHandler(data: NSArray) {
         // parse through NSArray
         for result in data {
@@ -110,5 +136,21 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     func responseError(message: String) {
     
     }
-    
+
+
+    override func prepare(for segue: UIStoryboardSegue,  sender: Any?) {
+        if let presenter = segue.destination as? MapViewController {
+            print("this is segue", self.latitude, self.longitude, self.mapLatitude, self.mapLongitude)
+            presenter.myLatitude = self.latitude!
+            presenter.myLongitude = self.longitude!
+            presenter.mapLatitude = self.mapLatitude!
+            presenter.mapLongitude = self.mapLongitude!
+            }
+            
+        }
+        
+
+
 }
+
+

@@ -85,10 +85,10 @@
 			children = (
 				56AFB8D5237A00FB00C5BF95 /* AppDelegate.swift */,
 				56AFB8D7237A00FB00C5BF95 /* SceneDelegate.swift */,
-				56AFB8D9237A00FB00C5BF95 /* ViewController.swift */,
 				56ED9CDA2383503500A8500F /* RestaurantDataSession.swift */,
-				56AFB8DB237A00FB00C5BF95 /* Main.storyboard */,
+				56AFB8D9237A00FB00C5BF95 /* ViewController.swift */,
 				CB337803238C9CB2000F1237 /* MapViewController.swift */,
+				56AFB8DB237A00FB00C5BF95 /* Main.storyboard */,
 				56AFB8E1237A00FC00C5BF95 /* Assets.xcassets */,
 				56AFB8E3237A00FC00C5BF95 /* LaunchScreen.storyboard */,
 				56AFB8E6237A00FC00C5BF95 /* Info.plist */,

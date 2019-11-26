@@ -19,14 +19,14 @@
                                 <rect key="frame" x="169.5" y="433" width="75" height="30"/>
                                 <state key="normal" title="Click Here!"/>
                                 <connections>
-                                    <segue destination="if5-5y-zZd" kind="show" id="gtV-da-UVT"/>
+                                    <segue destination="if5-5y-zZd" kind="show" id="s1X-od-LKR"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TJ-b8-gZR">
                                 <rect key="frame" x="158" y="812" width="98" height="30"/>
                                 <state key="normal" title="Feeling picky?"/>
                                 <connections>
-                                    <segue destination="z5G-uS-kTM" kind="show" id="6SZ-nc-gRJ"/>
+                                    <segue destination="z5G-uS-kTM" kind="show" id="2iH-eX-uWM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,7 +97,7 @@
                                         <state key="normal" title="Yes!" image="like"/>
                                         <connections>
                                             <action selector="yesButton:" destination="if5-5y-zZd" eventType="touchUpInside" id="WkN-vl-c7e"/>
-                                            <segue destination="lBC-qm-r92" kind="show" id="ObK-Dn-0u8"/>
+                                            <segue destination="lBC-qm-r92" kind="show" identifier="mapSegue" id="fdN-vd-3Ew"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -122,10 +122,10 @@
             </objects>
             <point key="canvasLocation" x="2379.7101449275365" y="408.48214285714283"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="RJD-HK-QBP">
             <objects>
-                <viewController id="lBC-qm-r92" sceneMemberID="viewController">
+                <viewController id="lBC-qm-r92" customClass="MapViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pqr-he-XPN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -144,6 +144,9 @@
                         <viewLayoutGuide key="safeArea" id="VEQ-W1-xU1"/>
                     </view>
                     <navigationItem key="navigationItem" id="pi3-Pf-WtC"/>
+                    <connections>
+                        <outlet property="mapView" destination="cMZ-K0-iPa" id="1PL-xf-Nc4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngy-6m-dvV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
