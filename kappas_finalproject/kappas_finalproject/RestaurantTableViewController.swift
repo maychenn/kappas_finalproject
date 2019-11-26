@@ -33,6 +33,24 @@ class RestaurantTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return restaurants.count
+    }
+          
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "RestaurantTableViewCell"
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+    
+                            
+        let rest = restaurants[indexPath.row]
+                            
+        //cell.nameLabel.text = rest.name
+        //cell.addressLabel.text = rest.address
+        //cell.imageView.image = UIImage("like.png")
+                            
+        return cell
+    }
     /*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -128,28 +146,3 @@ class RestaurantTableViewController: UITableViewController {
         }
 
     }
-
-    // MARK: - UITableViewDataSource
-    extension ViewController: UITableViewDataSource {
-      
-      func tableView(_ tableView: UITableView,
-                     numberOfRowsInSection section: Int) -> Int {
-        return restaurants.count
-      }
-      
-      func tableView(_ tableView: UITableView,
-                     cellForRowAt indexPath: IndexPath)
-                     -> UITableViewCell {
-                        let cellIdentifier = "RestaurantTableViewCell"
-
-                        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-                        }
-                        
-        let rest = restaurants[indexPath.row]
-                        
-        cell.nameLabel.text = rest.name
-        cell.addressLabel.text = rest.address
-        //cell.imageView.image = UIImage("like.png")
-                        
-        return cell
-}
