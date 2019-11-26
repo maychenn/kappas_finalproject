@@ -11,16 +11,16 @@ import CoreData
 import os.log
 
 var restaurants: [NSManagedObject] = []
-var restaurant: NSManagedObject = NSManagedObject()
+//var restaurant: NSManagedObject = NSManagedObject()
 
 
-class RestaurantTableViewController: UITableViewController {
+class RestaurantTableViewController: UITableViewController  {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         fetchData()
-        print(restaurants)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,10 +45,13 @@ class RestaurantTableViewController: UITableViewController {
                             
         let restaurant = restaurants[indexPath.row]
 
-        cell.nameLabel?.text = restaurant.value(forKeyPath: "name") as? String
-        cell.addressLabel?.text = restaurant.value(forKeyPath: "address") as? String
+        var name = restaurant.value(forKeyPath: "name") as! String
+        var address = restaurant.value(forKeyPath: "address") as! String
+        cell.nameLabel.text = "\(name)"
+        cell.addressLabel.text = "\(address)"
+        
         //cell.imageView.image = UIImage("like.png")
-                            
+        print(cell.nameLabel.text)
         return cell
     }
     
@@ -69,9 +72,8 @@ class RestaurantTableViewController: UITableViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-        
     }
-    
+    /*
     func fetchRestaurant(name:String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -86,11 +88,10 @@ class RestaurantTableViewController: UITableViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-    }
+    }*/
         
     
     func saveRestaurant(name: String, address: String, liked: Bool) {
-          
           guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -112,7 +113,6 @@ class RestaurantTableViewController: UITableViewController {
           rest.setValue(name, forKeyPath: "name")
           rest.setValue(address, forKeyPath: "address")
           rest.setValue(liked, forKeyPath: "liked")
-          
           // 4
           do {
             try managedContext.save()

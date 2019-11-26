@@ -16,7 +16,7 @@ class RestaurantTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     //@IBOutlet var imageView: UIImageView!
-    
+    //static let reuseIdentifier = "RestaurantCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
