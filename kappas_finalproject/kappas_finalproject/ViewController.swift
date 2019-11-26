@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreData
 
 class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManagerDelegate {
      
@@ -21,8 +22,14 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     var longitude : Double?
     var isLocationUpdated: Bool = false
     
+    var name:String = ""
+    var address:String = ""
+    var liked:Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // get locations
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
@@ -31,19 +38,21 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             locationManager.startUpdatingLocation()
         }
         
+        // calls data session
         self.dataSession.delegate = self
     }
+    // updates latitude & longitude
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if (!isLocationUpdated) {
             isLocationUpdated = true
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         let locations = "\(locValue.latitude),\(locValue.longitude)"
+            
+        // sends coordinates to dataSession
         self.dataSession.getData(postString: locations)
-    }
+        }
     }
     
-
-    var counter: Bool = false
     var restaurantArray = [[String]]()
 
     @IBAction func noButton(_ sender: UIButton) {
@@ -52,12 +61,14 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     }
     
     @IBAction func yesButton(_ sender: UIButton) {
-        counter = true
-    
+        liked = true
+        
     }
-    
+    // gets the random restaurant data from dataSession
     func generateRestaurant(restaurantArray:[[String]]) {
-        if self.counter == false {
+        
+        // checks that the json data has name and address
+        if self.liked == false {
             var randNum = Int.random(in:0...(self.restaurantArray.count-1))
             var restaurant = self.restaurantArray[randNum]
             
@@ -70,10 +81,10 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
                 } else {found = true}
             } while found == false
             
-            var name:String = String(restaurant[0] as! String)
-            var address:String = String(restaurant[1] as! String)
+            name = String(restaurant[0] as! String)
+            address = String(restaurant[1] as! String)
             
-        
+            // updates the view labels
             self.restaurantNameLabel.text = name
             self.addressLabel.text = address
             
@@ -90,18 +101,14 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             restaurantArray.append(resultData)
             }
         }
-        
-        
+        // gets a random restaurant
         DispatchQueue.main.async() {
             self.generateRestaurant(restaurantArray: self.restaurantArray)
-            
         }
     }
-   
     
     func responseError(message: String) {
     
     }
     
 }
-
