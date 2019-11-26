@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import GooglePlaces
+import os.log
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

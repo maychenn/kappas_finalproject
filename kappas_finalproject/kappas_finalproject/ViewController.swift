@@ -59,14 +59,16 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     }
     
     var restaurantArray = [[String]]()
-
+    
     @IBAction func noButton(_ sender: UIButton) {
         self.generateRestaurant(restaurantArray: restaurantArray)
-       
+        RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
+
     }
     
     @IBAction func yesButton(_ sender: UIButton) {
         liked = true
+        RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
         
         }
     
