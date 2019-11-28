@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VaQ-kJ-zua">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="VaQ-kJ-zua">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,6 +10,10 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3mh-lp-mav"/>
+                        <viewControllerLayoutGuide type="bottom" id="sAK-qq-Mkn"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -32,12 +35,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="9TJ-b8-gZR" firstAttribute="centerX" secondItem="967-qo-8yu" secondAttribute="centerX" id="8i8-0M-Pdc"/>
-                            <constraint firstItem="967-qo-8yu" firstAttribute="bottom" secondItem="9TJ-b8-gZR" secondAttribute="bottom" constant="20" id="GyI-9a-Ypd"/>
-                            <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerX" secondItem="967-qo-8yu" secondAttribute="centerX" id="WJB-33-eTV"/>
+                            <constraint firstItem="9TJ-b8-gZR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8i8-0M-Pdc"/>
+                            <constraint firstItem="sAK-qq-Mkn" firstAttribute="top" secondItem="9TJ-b8-gZR" secondAttribute="bottom" constant="20" id="GyI-9a-Ypd"/>
+                            <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJB-33-eTV"/>
                             <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wO5-HH-5ni"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="967-qo-8yu"/>
                     </view>
                     <navigationItem key="navigationItem" title="Where Should I Go Eat?" id="QVg-ru-z8w"/>
                 </viewController>
@@ -49,6 +51,10 @@
         <scene sceneID="QM3-ba-Awn">
             <objects>
                 <viewController id="if5-5y-zZd" customClass="ViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="exv-Dd-ja5"/>
+                        <viewControllerLayoutGuide type="bottom" id="SOj-W0-eHV"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="U2I-5s-DdE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,11 +116,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mfG-RI-oPn" firstAttribute="centerY" secondItem="U2I-5s-DdE" secondAttribute="centerY" id="1Eh-Z8-ajc"/>
-                            <constraint firstItem="Iur-P3-upu" firstAttribute="centerX" secondItem="e18-Q6-6ao" secondAttribute="centerX" id="Vlx-Kc-1f0"/>
-                            <constraint firstItem="Iur-P3-upu" firstAttribute="top" secondItem="e18-Q6-6ao" secondAttribute="top" constant="660" id="fkl-aX-v0Z"/>
-                            <constraint firstItem="mfG-RI-oPn" firstAttribute="centerX" secondItem="e18-Q6-6ao" secondAttribute="centerX" id="o7H-RM-viM"/>
+                            <constraint firstItem="Iur-P3-upu" firstAttribute="centerX" secondItem="U2I-5s-DdE" secondAttribute="centerX" id="Vlx-Kc-1f0"/>
+                            <constraint firstItem="Iur-P3-upu" firstAttribute="top" secondItem="exv-Dd-ja5" secondAttribute="bottom" constant="660" id="fkl-aX-v0Z"/>
+                            <constraint firstItem="mfG-RI-oPn" firstAttribute="centerX" secondItem="U2I-5s-DdE" secondAttribute="centerX" id="o7H-RM-viM"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="e18-Q6-6ao"/>
                     </view>
                     <navigationItem key="navigationItem" id="iVj-9i-PVo"/>
                     <connections>
@@ -130,6 +135,10 @@
         <scene sceneID="RJD-HK-QBP">
             <objects>
                 <viewController id="lBC-qm-r92" customClass="MapViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vT3-0C-GY3"/>
+                        <viewControllerLayoutGuide type="bottom" id="BGR-ws-f5u"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Pqr-he-XPN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -140,12 +149,11 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="bottom" secondItem="VEQ-W1-xU1" secondAttribute="bottom" id="Ixf-7G-lZ6"/>
-                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="top" secondItem="VEQ-W1-xU1" secondAttribute="top" id="gsW-XN-APr"/>
-                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="leading" secondItem="VEQ-W1-xU1" secondAttribute="leading" id="n5T-1f-5Nn"/>
-                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="trailing" secondItem="VEQ-W1-xU1" secondAttribute="trailing" id="qrn-KF-zZq"/>
+                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="bottom" secondItem="BGR-ws-f5u" secondAttribute="top" id="Ixf-7G-lZ6"/>
+                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="top" secondItem="vT3-0C-GY3" secondAttribute="bottom" id="gsW-XN-APr"/>
+                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="leading" secondItem="Pqr-he-XPN" secondAttribute="leading" id="n5T-1f-5Nn"/>
+                            <constraint firstItem="cMZ-K0-iPa" firstAttribute="trailing" secondItem="Pqr-he-XPN" secondAttribute="trailing" id="qrn-KF-zZq"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="VEQ-W1-xU1"/>
                     </view>
                     <navigationItem key="navigationItem" id="pi3-Pf-WtC"/>
                     <connections>
@@ -190,52 +198,37 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-GF-cba">
-                                            <rect key="frame" x="40" y="29" width="334" height="64"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
+                                            <rect key="frame" x="40" y="31" width="61.5" height="60"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="64"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="24.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
-                                                            <rect key="frame" x="0.0" y="43.5" width="50" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="t8x-lV-HoV" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="O29-Ot-fEm"/>
-                                                        <constraint firstItem="Qzy-ng-NeW" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="WFk-Ed-grs"/>
-                                                    </constraints>
-                                                </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-jp-lfv">
-                                                    <rect key="frame" x="270" y="0.0" width="64" height="64"/>
-                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
+                                                    <rect key="frame" x="0.0" y="39.5" width="61.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="0Ih-jp-lfv" firstAttribute="leading" secondItem="7ap-Dz-Cok" secondAttribute="trailing" id="1WV-NF-1Pa"/>
+                                                <constraint firstItem="t8x-lV-HoV" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="O29-Ot-fEm"/>
+                                                <constraint firstItem="Qzy-ng-NeW" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="WFk-Ed-grs"/>
                                             </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="QIS-GF-cba" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="BzQ-VZ-4aR"/>
-                                        <constraint firstItem="QIS-GF-cba" firstAttribute="top" secondItem="9jY-vO-SiC" secondAttribute="topMargin" constant="18" id="YgB-GE-3Ga"/>
-                                        <constraint firstItem="QIS-GF-cba" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="elg-Q5-PHt"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QIS-GF-cba" secondAttribute="trailing" constant="20" id="ime-qb-V2m"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="QIS-GF-cba" secondAttribute="trailing" constant="20" id="nGX-Jv-3XT"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="QIS-GF-cba" secondAttribute="bottom" constant="18" id="wql-d3-OR5"/>
+                                        <constraint firstItem="7ap-Dz-Cok" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="UDo-JT-AIv"/>
+                                        <constraint firstItem="7ap-Dz-Cok" firstAttribute="centerY" secondItem="9jY-vO-SiC" secondAttribute="centerY" id="imv-c2-ziu"/>
                                     </constraints>
-                                    <connections>
-                                        <outlet property="addressLabel" destination="t8x-lV-HoV" id="7q5-pm-VYt"/>
-                                        <outlet property="nameLabel" destination="Qzy-ng-NeW" id="Etp-e1-8fq"/>
-                                    </connections>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="t8x-lV-HoV" id="6tJ-3T-dyU"/>
+                                    <outlet property="nameLabel" destination="Qzy-ng-NeW" id="i4I-LL-xoK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

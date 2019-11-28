@@ -15,6 +15,7 @@ var restaurant: NSManagedObject = NSManagedObject()
 
 
 class RestaurantTableViewController: UITableViewController {
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,7 +99,42 @@ class RestaurantTableViewController: UITableViewController {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-        
+    
+    
+    func updateData(name: String, liked:Bool) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        do {
+            fetchRestaurant(name: name)
+            restaurant.setValue(liked, forKey: "liked")
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not update. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func searchData(name: String) -> Bool {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return false
+        }
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Restaurant")
+        fetchRequest.predicate = NSPredicate(format: "name = %@", name)
+
+        var results: [NSManagedObject] = []
+
+        do {
+            results = try managedContext.fetch(fetchRequest)
+        }
+        catch {
+            print("error executing fetch request: \(error)")
+        }
+
+        return results.count > 0
+    }
+    
     
     func saveRestaurant(name: String, address: String, liked: Bool) {
           
@@ -133,8 +169,6 @@ class RestaurantTableViewController: UITableViewController {
           }
             self.tableView.reloadData()
         }
-
-    
 
     
     }

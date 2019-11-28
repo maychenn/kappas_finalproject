@@ -61,15 +61,24 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     var restaurantArray = [[String]]()
     
     @IBAction func noButton(_ sender: UIButton) {
-        self.generateRestaurant(restaurantArray: restaurantArray)
-        RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
-
+        // check if restaurant is already in core data or not
+        if RestaurantTableViewController().searchData(name: restaurantNameLabel.text!) == true {
+            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: liked)
+        } else {
+            self.generateRestaurant(restaurantArray: restaurantArray)
+            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
+            }
     }
     
     @IBAction func yesButton(_ sender: UIButton) {
         liked = true
-        RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
-        
+        if RestaurantTableViewController().searchData(name: restaurantNameLabel.text!) == true {
+            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: liked)
+        } else {
+            self.generateRestaurant(restaurantArray: restaurantArray)
+            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
+            }
+
         }
     
     func getCoordinates(address:String) {
@@ -87,7 +96,7 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             self.mapLongitude = CLLongitude
            
         }}
-    
+
     
     // gets the random restaurant data from dataSession
     func generateRestaurant(restaurantArray:[[String]]) {
