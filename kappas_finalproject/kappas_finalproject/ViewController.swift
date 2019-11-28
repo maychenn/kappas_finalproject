@@ -108,7 +108,7 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             
             var found: Bool = false
             repeat {
-                var randNum = Int.random(in:0...(self.restaurantArray.count))
+                var randNum = Int.random(in:0...(self.restaurantArray.count-1))
                 var restaurant = self.restaurantArray[randNum]
                 if restaurant[0] == nil || restaurant[1] == nil {
                     self.restaurantArray.remove(at: randNum)

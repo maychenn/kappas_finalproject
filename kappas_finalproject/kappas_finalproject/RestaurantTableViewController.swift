@@ -48,8 +48,7 @@ class RestaurantTableViewController: UITableViewController {
 
         cell.nameLabel?.text = restaurant.value(forKeyPath: "name") as? String
         cell.addressLabel?.text = restaurant.value(forKeyPath: "address") as? String
-        //cell.imageView.image = UIImage("like.png")
-                            
+       // cell.likedImage?.image = UIImage(named: (restaurant.value(forKeyPath: "liked") as! String))
         return cell
     }
     

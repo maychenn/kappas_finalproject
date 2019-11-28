@@ -14,10 +14,8 @@ import os.log
 class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var addressLabel: UILabel!
-    
-    //@IBOutlet var imageView: UIImageView!
+    @IBOutlet weak var likedImage: UIImageView!
     
 
     override func awakeFromNib() {
