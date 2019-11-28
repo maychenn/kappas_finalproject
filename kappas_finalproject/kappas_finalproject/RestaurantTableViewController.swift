@@ -56,6 +56,17 @@ class RestaurantTableViewController: UITableViewController {
         return 200
     }
     
+    // this function lets you delete by swiping left
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        if editingStyle == .delete {
+            let restaurantToDelete = restaurants[indexPath.row]
+            context.delete(restaurantToDelete)
+            (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        }
+        tableView.reloadData()
+    }
     
     func fetchData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
@@ -123,4 +134,7 @@ class RestaurantTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
 
+    
+
+    
     }
