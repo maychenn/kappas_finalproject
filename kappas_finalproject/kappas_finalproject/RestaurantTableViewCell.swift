@@ -11,9 +11,16 @@ import UIKit
 class RestaurantTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var addressLabel: UILabel!
+<<<<<<< HEAD
     //@IBOutlet var imageView: UIImageView!
     //static let reuseIdentifier = "RestaurantCell"
+=======
+    
+    //@IBOutlet var imageView: UIImageView!
+    
+>>>>>>> parent of ab79bc9... some updates to main storyboard
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -187,28 +187,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+<<<<<<< HEAD
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="GPh-wf-Fiv">
                                             <rect key="frame" x="20" y="28" width="61.5" height="59"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
                                                     <rect key="frame" x="0.0" y="0.0" width="42.5" height="20.5"/>
+=======
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
+                                            <rect key="frame" x="40" y="31" width="61.5" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
+<<<<<<< HEAD
                                                     <rect key="frame" x="0.0" y="38.5" width="61.5" height="20.5"/>
+=======
+                                                    <rect key="frame" x="0.0" y="39.5" width="61.5" height="20.5"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t8x-lV-HoV" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="O29-Ot-fEm"/>
+                                                <constraint firstItem="Qzy-ng-NeW" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="WFk-Ed-grs"/>
+                                            </constraints>
                                         </stackView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-jp-lfv">
                                             <rect key="frame" x="304" y="28" width="64" height="64"/>
                                         </imageView>
                                     </subviews>
                                     <constraints>
+<<<<<<< HEAD
                                         <constraint firstItem="0Ih-jp-lfv" firstAttribute="leading" secondItem="GPh-wf-Fiv" secondAttribute="trailing" id="4Wd-RA-M6e"/>
                                         <constraint firstItem="GPh-wf-Fiv" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" id="gEO-v8-iq5"/>
                                     </constraints>
@@ -217,6 +234,16 @@
                                         <outlet property="nameLabel" destination="Qzy-ng-NeW" id="Etp-e1-8fq"/>
                                     </connections>
                                 </tableViewCellContentView>
+=======
+                                        <constraint firstItem="7ap-Dz-Cok" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="UDo-JT-AIv"/>
+                                        <constraint firstItem="7ap-Dz-Cok" firstAttribute="centerY" secondItem="9jY-vO-SiC" secondAttribute="centerY" id="imv-c2-ziu"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="addressLabel" destination="t8x-lV-HoV" id="6tJ-3T-dyU"/>
+                                    <outlet property="nameLabel" destination="Qzy-ng-NeW" id="i4I-LL-xoK"/>
+                                </connections>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -228,6 +255,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G83-eC-x50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="1042" y="875"/>
 =======
                         <subviews>
@@ -303,6 +331,9 @@
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="807.58928571428567"/>
 >>>>>>> parent of 94b4327... Table View working
+=======
+            <point key="canvasLocation" x="1061" y="785"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
         </scene>
     </scenes>
     <resources>

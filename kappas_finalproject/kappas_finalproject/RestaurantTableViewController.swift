@@ -72,8 +72,15 @@ class RestaurantTableViewController: UITableViewController {
         //cell.nameLabel.text = rest.name
         //cell.addressLabel.text = rest.address
 
+<<<<<<< HEAD
         //cell.imageView.image = UIImage("like.png")
         print(cell.nameLabel.text)
+=======
+        cell.nameLabel?.text = restaurant.value(forKeyPath: "name") as? String
+        cell.addressLabel?.text = restaurant.value(forKeyPath: "address") as? String
+        //cell.imageView.image = UIImage("like.png")
+                            
+>>>>>>> parent of ab79bc9... some updates to main storyboard
         return cell
     }
     
