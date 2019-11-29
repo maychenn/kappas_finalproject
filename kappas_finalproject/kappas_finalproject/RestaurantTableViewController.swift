@@ -13,7 +13,7 @@ import os.log
 var restaurants: [NSManagedObject] = []
 //var restaurant: NSManagedObject = NSManagedObject()
 
-
+/*
 class RestaurantTableViewController: UITableViewController  {
         
     override func viewDidLoad() {
@@ -27,36 +27,59 @@ class RestaurantTableViewController: UITableViewController  {
         super.viewWillAppear(animated)
         fetchData()
         tableView.reloadData()
+*/
+class RestaurantTableViewController: UITableViewController {
+    
+    var restaurants: [NSManagedObject] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        title = "Your Restaurants"
+               tableView.register(UITableViewCell.self,
+                                  forCellReuseIdentifier: "Cell")
+               
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return restaurants.count
     }
           
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
-                            
-        let restaurant = restaurants[indexPath.row]
+        let cellIdentifier = "RestaurantTableViewCell"
 
         var name = restaurant.value(forKeyPath: "name") as! String
         var address = restaurant.value(forKeyPath: "address") as! String
         cell.nameLabel.text = "\(name)"
         cell.addressLabel.text = "\(address)"
-        
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+    
+                            
+        let rest = restaurants[indexPath.row]
+                            
+        //cell.nameLabel.text = rest.name
+        //cell.addressLabel.text = rest.address
+
         //cell.imageView.image = UIImage("like.png")
         print(cell.nameLabel.text)
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return 0
     }
     
     
@@ -73,7 +96,7 @@ class RestaurantTableViewController: UITableViewController  {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
     }
-    /*
+    
     func fetchRestaurant(name:String) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -88,9 +111,52 @@ class RestaurantTableViewController: UITableViewController  {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-    }*/
-        
+    }
     
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+    }
+
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+
     func saveRestaurant(name: String, address: String, liked: Bool) {
           guard let appDelegate =
             UIApplication.shared.delegate as? AppDelegate else {

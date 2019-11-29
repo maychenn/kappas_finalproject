@@ -7,9 +7,6 @@
 //
 
 import UIKit
-import CoreData
-import os.log
-
 
 class RestaurantTableViewCell: UITableViewCell {
 
@@ -28,6 +25,5 @@ class RestaurantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
 
 }

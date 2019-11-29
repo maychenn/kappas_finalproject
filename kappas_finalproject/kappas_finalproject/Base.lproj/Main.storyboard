@@ -23,10 +23,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TJ-b8-gZR">
-                                <rect key="frame" x="157.5" y="812" width="99" height="30"/>
-                                <state key="normal" title="See past likes."/>
+                                <rect key="frame" x="158" y="812" width="98" height="30"/>
+                                <state key="normal" title="Feeling picky?"/>
                                 <connections>
-                                    <segue destination="gIj-ue-fRE" kind="show" id="QOK-9j-ENY"/>
+                                    <segue destination="z5G-uS-kTM" kind="show" id="2iH-eX-uWM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -54,28 +54,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="mfG-RI-oPn">
-                                <rect key="frame" x="141" y="383" width="132.5" height="130"/>
+                                <rect key="frame" x="141" y="412.5" width="132.5" height="71"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjJ-HY-ROZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Restaurant Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjJ-HY-ROZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="132.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG6-3T-uSy">
-                                        <rect key="frame" x="0.0" y="80" width="132.5" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG6-3T-uSy">
+                                        <rect key="frame" x="0.0" y="50.5" width="132.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="qjJ-HY-ROZ" secondAttribute="trailing" id="GYm-yI-knr"/>
-                                    <constraint firstAttribute="trailing" secondItem="IG6-3T-uSy" secondAttribute="trailing" id="ama-sS-tUG"/>
                                     <constraint firstAttribute="trailing" secondItem="IG6-3T-uSy" secondAttribute="trailing" id="bJf-Ml-bmi"/>
                                     <constraint firstItem="IG6-3T-uSy" firstAttribute="leading" secondItem="mfG-RI-oPn" secondAttribute="leading" id="jXV-jg-h37"/>
-                                    <constraint firstItem="qjJ-HY-ROZ" firstAttribute="leading" secondItem="mfG-RI-oPn" secondAttribute="leading" id="pba-S2-MGe"/>
-                                    <constraint firstItem="IG6-3T-uSy" firstAttribute="leading" secondItem="mfG-RI-oPn" secondAttribute="leading" id="sNh-cZ-KGt"/>
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="168" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-P3-upu">
@@ -175,12 +171,13 @@
             <point key="canvasLocation" x="131.8840579710145" y="100.44642857142857"/>
         </scene>
         <!--Restaurant Table View Controller-->
-        <scene sceneID="egu-kg-Ist">
+        <scene sceneID="dba-sp-zjY">
             <objects>
-                <tableViewController id="gIj-ue-fRE" customClass="RestaurantTableViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="rgY-f2-gur">
+                <viewController id="z5G-uS-kTM" customClass="RestaurantTableViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="INj-NQ-6H7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<<<<<<< HEAD
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantTableViewCell" rowHeight="122" id="ss0-pH-lbV" customClass="RestaurantTableViewCell" customModule="kappas_finalproject" customModuleProvider="target">
@@ -232,6 +229,80 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G83-eC-x50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042" y="875"/>
+=======
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b3g-Qa-Vc9">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="96" id="gZ1-0z-cqO" customClass="RestaurantTableViewCell" customModule="kappas_finalproject" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="96"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gZ1-0z-cqO" id="VGn-cB-Sah">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="220" translatesAutoresizingMaskIntoConstraints="NO" id="QIS-GF-cba">
+                                                    <rect key="frame" x="40" y="16" width="334" height="64"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
+                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="64"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="42.5" height="24.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
+                                                                    <rect key="frame" x="0.0" y="43.5" width="50" height="20.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0Ih-jp-lfv">
+                                                            <rect key="frame" x="270" y="0.0" width="64" height="64"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0Ih-jp-lfv" firstAttribute="leading" secondItem="7ap-Dz-Cok" secondAttribute="trailing" id="1WV-NF-1Pa"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="QIS-GF-cba" secondAttribute="trailing" constant="20" id="JNQ-hN-wmb"/>
+                                                <constraint firstItem="QIS-GF-cba" firstAttribute="leading" secondItem="VGn-cB-Sah" secondAttribute="leadingMargin" constant="20" id="dyJ-3c-woi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="t8x-lV-HoV" id="k7u-RY-1dM"/>
+                                            <outlet property="imageView" destination="0Ih-jp-lfv" id="Fwe-IJ-sEA"/>
+                                            <outlet property="nameLabel" destination="Qzy-ng-NeW" id="sPX-Os-6Vj"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="b3g-Qa-Vc9" secondAttribute="trailing" id="ZHF-41-aQ1"/>
+                            <constraint firstAttribute="bottom" secondItem="b3g-Qa-Vc9" secondAttribute="bottom" id="i7T-uP-7an"/>
+                            <constraint firstItem="b3g-Qa-Vc9" firstAttribute="top" secondItem="INj-NQ-6H7" secondAttribute="top" constant="88" id="k4d-WI-rDB"/>
+                            <constraint firstItem="b3g-Qa-Vc9" firstAttribute="leading" secondItem="INj-NQ-6H7" secondAttribute="leading" id="lTi-8s-GVc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="yC2-if-h9A"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VBk-XV-PG2"/>
+                    <connections>
+                        <outlet property="tableView" destination="b3g-Qa-Vc9" id="Zek-ec-9o9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dCZ-I8-1IK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1039.1304347826087" y="807.58928571428567"/>
+>>>>>>> parent of 94b4327... Table View working
         </scene>
     </scenes>
     <resources>
