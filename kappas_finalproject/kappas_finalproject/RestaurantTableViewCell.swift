@@ -14,9 +14,14 @@ class RestaurantTableViewCell: UITableViewCell {
     
     @IBOutlet weak var addressLabel: UILabel!
 <<<<<<< HEAD
+<<<<<<< HEAD
     //@IBOutlet var imageView: UIImageView!
     //static let reuseIdentifier = "RestaurantCell"
 =======
+=======
+    
+    //@IBOutlet var imageView: UIImageView!
+>>>>>>> parent of ab79bc9... some updates to main storyboard
     
     //@IBOutlet var imageView: UIImageView!
     

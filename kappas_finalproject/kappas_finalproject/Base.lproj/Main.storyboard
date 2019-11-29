@@ -188,11 +188,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="GPh-wf-Fiv">
                                             <rect key="frame" x="20" y="28" width="61.5" height="59"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
                                                     <rect key="frame" x="0.0" y="0.0" width="42.5" height="20.5"/>
+=======
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
+                                            <rect key="frame" x="40" y="31" width="61.5" height="60"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="61.5" height="20.5"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
 =======
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
                                             <rect key="frame" x="40" y="31" width="61.5" height="60"/>
@@ -206,7 +214,11 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                                     <rect key="frame" x="0.0" y="38.5" width="61.5" height="20.5"/>
+=======
+                                                    <rect key="frame" x="0.0" y="39.5" width="61.5" height="20.5"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
 =======
                                                     <rect key="frame" x="0.0" y="39.5" width="61.5" height="20.5"/>
 >>>>>>> parent of ab79bc9... some updates to main storyboard
@@ -226,6 +238,7 @@
                                     </subviews>
                                     <constraints>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <constraint firstItem="0Ih-jp-lfv" firstAttribute="leading" secondItem="GPh-wf-Fiv" secondAttribute="trailing" id="4Wd-RA-M6e"/>
                                         <constraint firstItem="GPh-wf-Fiv" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" id="gEO-v8-iq5"/>
                                     </constraints>
@@ -235,6 +248,8 @@
                                     </connections>
                                 </tableViewCellContentView>
 =======
+=======
+>>>>>>> parent of ab79bc9... some updates to main storyboard
                                         <constraint firstItem="7ap-Dz-Cok" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="UDo-JT-AIv"/>
                                         <constraint firstItem="7ap-Dz-Cok" firstAttribute="centerY" secondItem="9jY-vO-SiC" secondAttribute="centerY" id="imv-c2-ziu"/>
                                     </constraints>
@@ -255,6 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G83-eC-x50" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
 <<<<<<< HEAD
             <point key="canvasLocation" x="1042" y="875"/>
 =======
@@ -331,6 +347,9 @@
             </objects>
             <point key="canvasLocation" x="1039.1304347826087" y="807.58928571428567"/>
 >>>>>>> parent of 94b4327... Table View working
+=======
+            <point key="canvasLocation" x="1061" y="785"/>
+>>>>>>> parent of ab79bc9... some updates to main storyboard
 =======
             <point key="canvasLocation" x="1061" y="785"/>
 >>>>>>> parent of ab79bc9... some updates to main storyboard

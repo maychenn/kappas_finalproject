@@ -80,6 +80,9 @@ class RestaurantTableViewController: UITableViewController {
         cell.addressLabel?.text = restaurant.value(forKeyPath: "address") as? String
         //cell.imageView.image = UIImage("like.png")
                             
+<<<<<<< HEAD
+>>>>>>> parent of ab79bc9... some updates to main storyboard
+=======
 >>>>>>> parent of ab79bc9... some updates to main storyboard
         return cell
     }
