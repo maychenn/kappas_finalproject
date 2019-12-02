@@ -21,7 +21,7 @@ class RestaurantTableViewController: UITableViewController {
         super.viewDidLoad()
         
         fetchData()
-        print(restaurants)
+        //print(restaurants)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,12 +48,17 @@ class RestaurantTableViewController: UITableViewController {
 
         cell.nameLabel?.text = restaurant.value(forKeyPath: "name") as? String
         cell.addressLabel?.text = restaurant.value(forKeyPath: "address") as? String
-       // cell.likedImage?.image = UIImage(named: (restaurant.value(forKeyPath: "liked") as! String))
+        if restaurant.value(forKeyPath: "liked") as? Bool == true {
+            cell.likedImage?.image = UIImage(named:"like")
+        } else {
+            cell.likedImage?.image = UIImage(named:"dislike")
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 100
     }
     
     // this function lets you delete by swiping left
@@ -64,8 +69,9 @@ class RestaurantTableViewController: UITableViewController {
             let restaurantToDelete = restaurants[indexPath.row]
             context.delete(restaurantToDelete)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()
+            tableView.reloadData()
         }
-        tableView.reloadData()
+        
     }
     
     func fetchData() {

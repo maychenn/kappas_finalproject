@@ -61,23 +61,24 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     var restaurantArray = [[String]]()
     
     @IBAction func noButton(_ sender: UIButton) {
-        // check if restaurant is already in core data or not
+        // restaurant alrdy seen
         if RestaurantTableViewController().searchData(name: restaurantNameLabel.text!) == true {
-            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: liked)
-        } else {
-            self.generateRestaurant(restaurantArray: restaurantArray)
-            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
+            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: false)
+        } else {    // not seen
+            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: false)
             }
+        self.generateRestaurant(restaurantArray: restaurantArray)
     }
     
     @IBAction func yesButton(_ sender: UIButton) {
         liked = true
-        if RestaurantTableViewController().searchData(name: restaurantNameLabel.text!) == true {
-            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: liked)
-        } else {
-            self.generateRestaurant(restaurantArray: restaurantArray)
-            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: liked)
+        // not seen
+        if RestaurantTableViewController().searchData(name: restaurantNameLabel.text!) == false {
+            RestaurantTableViewController().saveRestaurant(name: restaurantNameLabel.text!, address: addressLabel.text!, liked: true)
             }
+        else {  // seen
+            RestaurantTableViewController().updateData(name: restaurantNameLabel.text!, liked: true)
+        }
 
         }
     
@@ -100,20 +101,17 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     
     // gets the random restaurant data from dataSession
     func generateRestaurant(restaurantArray:[[String]]) {
+        print(self.restaurantArray.count)
         
+        if self.restaurantArray.count <= 0 {
+            self.restaurantNameLabel.text = "Sorry!"
+            self.addressLabel.text = "No more restaurants found"
+        }
         // checks that the json data has name and address
         if self.liked == false {
             var randNum = Int.random(in:0...(self.restaurantArray.count-1))
             var restaurant = self.restaurantArray[randNum]
-            
-            var found: Bool = false
-            repeat {
-                var randNum = Int.random(in:0...(self.restaurantArray.count-1))
-                var restaurant = self.restaurantArray[randNum]
-                if restaurant[0] == nil || restaurant[1] == nil {
-                    self.restaurantArray.remove(at: randNum)
-                } else {found = true}
-            } while found == false
+            self.restaurantArray.remove(at: randNum)
             
             name = String(restaurant[0] as! String)
             address = String(restaurant[1] as! String)
@@ -156,6 +154,8 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
             presenter.myLongitude = self.longitude!
             presenter.mapLatitude = self.mapLatitude!
             presenter.mapLongitude = self.mapLongitude!
+            presenter.name = self.restaurantNameLabel.text!
+            presenter.address = self.addressLabel.text!
             }
             
         }
