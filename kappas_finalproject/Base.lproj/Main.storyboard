@@ -6,10 +6,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Where Should I Go Eat?-->
+        <!--Bon Mappétit-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                <viewController title="Bon Mappétit" id="BYZ-38-t0r" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3mh-lp-mav"/>
                         <viewControllerLayoutGuide type="bottom" id="sAK-qq-Mkn"/>
@@ -18,21 +18,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxx-NF-tkf">
-                                <rect key="frame" x="169.5" y="433" width="75" height="30"/>
-                                <state key="normal" title="Click Here!"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zxx-NF-tkf">
+                                <rect key="frame" x="27" y="268" width="360" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="360" id="WB3-88-B56"/>
+                                    <constraint firstAttribute="width" constant="360" id="yQq-Tf-Mi4"/>
+                                </constraints>
+                                <state key="normal" image="logotransparent">
+                                    <color key="titleColor" red="0.031372549019607843" green="0.20392156862745098" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="if5-5y-zZd" kind="show" id="s1X-od-LKR"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="b o n   m a p p é t i t" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yap-g8-6yb">
+                                <rect key="frame" x="0.0" y="638" width="414" height="52"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <color key="textColor" red="0.031372549020000001" green="0.20392156859999999" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.96862745098039216" green="0.77647058823529413" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="yap-g8-6yb" firstAttribute="top" secondItem="Zxx-NF-tkf" secondAttribute="bottom" constant="10" id="7ms-83-UgM"/>
                             <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="WJB-33-eTV"/>
+                            <constraint firstAttribute="trailing" secondItem="yap-g8-6yb" secondAttribute="trailing" id="tIQ-5G-aCc"/>
                             <constraint firstItem="Zxx-NF-tkf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="wO5-HH-5ni"/>
+                            <constraint firstItem="yap-g8-6yb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zWg-iE-99j"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Where Should I Go Eat?" id="QVg-ru-z8w">
+                    <navigationItem key="navigationItem" title="Home" id="QVg-ru-z8w">
                         <barButtonItem key="rightBarButtonItem" title="History" id="kRw-cc-R60">
                             <connections>
                                 <segue destination="gIj-ue-fRE" kind="show" id="vbJ-s5-gDQ"/>
@@ -61,13 +76,13 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjJ-HY-ROZ">
                                         <rect key="frame" x="0.0" y="0.0" width="132.5" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG6-3T-uSy">
                                         <rect key="frame" x="0.0" y="80" width="132.5" height="50"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -81,8 +96,8 @@
                                     <constraint firstItem="IG6-3T-uSy" firstAttribute="leading" secondItem="mfG-RI-oPn" secondAttribute="leading" id="sNh-cZ-KGt"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="168" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-P3-upu">
-                                <rect key="frame" x="20" y="748" width="368" height="100"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="168" translatesAutoresizingMaskIntoConstraints="NO" id="Iur-P3-upu">
+                                <rect key="frame" x="23" y="663" width="368" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBQ-ge-ECu" customClass="BounceButton" customModule="kappas_finalproject" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -110,12 +125,12 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.77647058820000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mfG-RI-oPn" firstAttribute="centerY" secondItem="U2I-5s-DdE" secondAttribute="centerY" id="1Eh-Z8-ajc"/>
                             <constraint firstItem="Iur-P3-upu" firstAttribute="centerX" secondItem="U2I-5s-DdE" secondAttribute="centerX" id="Vlx-Kc-1f0"/>
-                            <constraint firstItem="Iur-P3-upu" firstAttribute="top" secondItem="exv-Dd-ja5" secondAttribute="bottom" constant="660" id="fkl-aX-v0Z"/>
                             <constraint firstItem="mfG-RI-oPn" firstAttribute="centerX" secondItem="U2I-5s-DdE" secondAttribute="centerX" id="o7H-RM-viM"/>
+                            <constraint firstItem="Iur-P3-upu" firstAttribute="top" secondItem="mfG-RI-oPn" secondAttribute="bottom" constant="150" id="xf4-gP-BiT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iVj-9i-PVo">
@@ -134,7 +149,7 @@
             </objects>
             <point key="canvasLocation" x="2379.7101449275365" y="408.48214285714283"/>
         </scene>
-        <!--Bon Appétit!-->
+        <!--Map View Controller-->
         <scene sceneID="RJD-HK-QBP">
             <objects>
                 <viewController id="lBC-qm-r92" customClass="MapViewController" customModule="kappas_finalproject" customModuleProvider="target" sceneMemberID="viewController">
@@ -150,36 +165,36 @@
                                 <rect key="frame" x="0.0" y="238" width="414" height="624"/>
                             </mapView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2zf-ko-Gih">
-                                <rect key="frame" x="20" y="108" width="374" height="112"/>
+                                <rect key="frame" x="20" y="108" width="374" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="710-ev-gAO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="710-ev-gAO">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35p-Bh-aSw">
-                                        <rect key="frame" x="0.0" y="30.5" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35p-Bh-aSw">
+                                        <rect key="frame" x="0.0" y="32.5" width="374" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrA-cm-GOU">
-                                        <rect key="frame" x="0.0" y="61" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SrA-cm-GOU">
+                                        <rect key="frame" x="0.0" y="65" width="374" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-g2-Vny">
-                                        <rect key="frame" x="0.0" y="91.5" width="374" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2B-g2-Vny">
+                                        <rect key="frame" x="0.0" y="97.5" width="374" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.96862745100000003" green="0.77647058820000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="2zf-ko-Gih" firstAttribute="leading" secondItem="Pqr-he-XPN" secondAttribute="leadingMargin" id="4P4-G1-Ak6"/>
                             <constraint firstItem="cMZ-K0-iPa" firstAttribute="bottom" secondItem="BGR-ws-f5u" secondAttribute="top" id="Ixf-7G-lZ6"/>
@@ -191,7 +206,7 @@
                             <constraint firstItem="cMZ-K0-iPa" firstAttribute="trailing" secondItem="Pqr-he-XPN" secondAttribute="trailing" id="qrn-KF-zZq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bon Appétit!" id="pi3-Pf-WtC">
+                    <navigationItem key="navigationItem" id="pi3-Pf-WtC">
                         <barButtonItem key="rightBarButtonItem" title="History" id="gLT-Pr-Y8B">
                             <connections>
                                 <segue destination="gIj-ue-fRE" kind="show" id="tA6-AS-cXR"/>
@@ -236,6 +251,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.96862745100000003" green="0.77647058820000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RestaurantTableViewCell" rowHeight="122" id="ss0-pH-lbV" customClass="RestaurantTableViewCell" customModule="kappas_finalproject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="122"/>
@@ -244,46 +260,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="122"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="83" translatesAutoresizingMaskIntoConstraints="NO" id="fKU-qP-LDm">
-                                            <rect key="frame" x="20" y="27" width="374" height="68"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="18J-Mh-RcN">
+                                            <rect key="frame" x="40" y="27" width="334" height="68"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VNp-tj-spj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="68" id="3fu-5u-Dy8"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="68" id="8UH-hU-fMy"/>
+                                                        <constraint firstAttribute="width" constant="68" id="m60-z2-EGs"/>
+                                                        <constraint firstAttribute="height" constant="68" id="vgr-DD-hPz"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="7ap-Dz-Cok">
-                                                    <rect key="frame" x="0.0" y="0.0" width="223" height="68"/>
+                                                    <rect key="frame" x="76" y="0.0" width="258" height="68"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzy-ng-NeW">
-                                                            <rect key="frame" x="0.0" y="0.0" width="223" height="28.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="258" height="26.5"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8x-lV-HoV">
-                                                            <rect key="frame" x="0.0" y="47.5" width="223" height="20.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="45.5" width="258" height="22.5"/>
+                                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="t8x-lV-HoV" secondAttribute="trailing" id="8od-g0-vVN"/>
                                                         <constraint firstItem="t8x-lV-HoV" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="O29-Ot-fEm"/>
+                                                        <constraint firstAttribute="bottom" secondItem="t8x-lV-HoV" secondAttribute="bottom" constant="16" id="Sr2-Dl-GC9"/>
                                                         <constraint firstItem="Qzy-ng-NeW" firstAttribute="centerX" secondItem="7ap-Dz-Cok" secondAttribute="centerX" id="WFk-Ed-grs"/>
+                                                        <constraint firstItem="t8x-lV-HoV" firstAttribute="leading" secondItem="7ap-Dz-Cok" secondAttribute="leading" constant="20" id="bzx-Nt-2ls"/>
+                                                        <constraint firstItem="t8x-lV-HoV" firstAttribute="top" secondItem="Qzy-ng-NeW" secondAttribute="bottom" constant="16" id="yQl-7o-uU0"/>
                                                     </constraints>
                                                 </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VNp-tj-spj">
-                                                    <rect key="frame" x="306" y="0.0" width="68" height="68"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="68" id="m60-z2-EGs"/>
-                                                        <constraint firstAttribute="height" constant="68" id="vgr-DD-hPz"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="fKU-qP-LDm" firstAttribute="centerY" secondItem="9jY-vO-SiC" secondAttribute="centerY" id="5Ke-4U-shO"/>
-                                        <constraint firstItem="fKU-qP-LDm" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leading" constant="20" id="qkR-Iq-mNT"/>
-                                        <constraint firstAttribute="trailing" secondItem="fKU-qP-LDm" secondAttribute="trailing" constant="20" id="v90-3M-aMe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="18J-Mh-RcN" secondAttribute="trailing" constant="20" id="9QI-OR-pkj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="18J-Mh-RcN" secondAttribute="bottom" constant="16" id="aqe-DR-fCC"/>
+                                        <constraint firstItem="18J-Mh-RcN" firstAttribute="top" secondItem="9jY-vO-SiC" secondAttribute="topMargin" constant="16" id="cWv-tE-Wby"/>
+                                        <constraint firstItem="18J-Mh-RcN" firstAttribute="leading" secondItem="9jY-vO-SiC" secondAttribute="leadingMargin" constant="20" id="f6G-0m-lZU"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.96862745100000003" green="0.77647058820000003" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="addressLabel" destination="t8x-lV-HoV" id="6tJ-3T-dyU"/>
                                     <outlet property="likedImage" destination="VNp-tj-spj" id="5xJ-Gb-sb0"/>
@@ -304,10 +328,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="dislike" width="128" height="128"/>
-        <image name="like" width="128" height="128"/>
+        <image name="dislike" width="256" height="256"/>
+        <image name="like" width="256" height="256"/>
+        <image name="logotransparent" width="480" height="480"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tA6-AS-cXR"/>
+        <segue reference="vbJ-s5-gDQ"/>
     </inferredMetricsTieBreakers>
 </document>
