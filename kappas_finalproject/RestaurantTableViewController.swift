@@ -19,9 +19,9 @@ class RestaurantTableViewController: UITableViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         fetchData()
-        //print(restaurants)
+
+
     }
     
     override func viewWillAppear(_ animated: Bool) {

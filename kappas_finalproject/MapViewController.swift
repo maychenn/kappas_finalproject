@@ -20,6 +20,7 @@ class MapViewController:UIViewController, MKMapViewDelegate {
     
     let annotation = MKPointAnnotation()
     
+    
     var myLatitude: Double?
     var myLongitude: Double?
     var mapLatitude: Double?
@@ -33,7 +34,7 @@ class MapViewController:UIViewController, MKMapViewDelegate {
         mapView.delegate = self
         
         let initialLocation = CLLocation(latitude: mapLatitude!, longitude: mapLongitude!)
-        centerMapOnLocation(location: initialLocation)
+        self.centerMapOnLocation(location: initialLocation)
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: mapLatitude!, longitude: mapLongitude!)
         mapView.addAnnotation(annotation)
@@ -62,7 +63,6 @@ class MapViewController:UIViewController, MKMapViewDelegate {
     }
     
     func mapRoute() {
-        print("trying to find the route")
         let request = MKDirections.Request()
         request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: myLatitude!, longitude: myLongitude!), addressDictionary: nil))
         request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: mapLatitude!, longitude: mapLongitude!), addressDictionary: nil))
@@ -114,5 +114,50 @@ class MapViewController:UIViewController, MKMapViewDelegate {
             }
             */
     }
+    }
+    
+    func mapView(_ ProfileMapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+
+        if annotation.isMember(of: MKUserLocation.self) {
+            return nil
+        }
+
+        let reuseId = "PinView"
+
+        var pinView = ProfileMapView.dequeueReusableAnnotationView(withIdentifier: reuseId)
+        if pinView == nil {
+            pinView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseId)}
+        pinView!.canShowCallout = true
+
+        let newPin = self.resizeImage(image: UIImage(named: "pin")!, targetSize: CGSize(width: 50.0, height: 50.0))
+        pinView!.image = newPin
+        
+        return pinView
+
+    }
+     func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
     }
 }

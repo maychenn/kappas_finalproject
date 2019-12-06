@@ -101,7 +101,7 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
     
     // gets the random restaurant data from dataSession
     func generateRestaurant(restaurantArray:[[String]]) {
-        print(self.restaurantArray.count)
+
         
         if self.restaurantArray.count <= 0 {
             self.restaurantNameLabel.text = "Sorry!"
@@ -149,7 +149,7 @@ class ViewController: UIViewController, RestaurantDataProtocol, CLLocationManage
 
     override func prepare(for segue: UIStoryboardSegue,  sender: Any?) {
         if let presenter = segue.destination as? MapViewController {
-            print("this is segue", self.latitude, self.longitude, self.mapLatitude, self.mapLongitude)
+
             presenter.myLatitude = self.latitude!
             presenter.myLongitude = self.longitude!
             presenter.mapLatitude = self.mapLatitude!
